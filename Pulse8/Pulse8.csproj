@@ -52,6 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SQL\pulse8Final.sql" />
     <Content Include="SQL\Pulse8Sproc.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

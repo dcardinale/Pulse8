@@ -1,20 +1,5 @@
 use Pulse8TestDB;
 
-IF EXISTS (SELECT * FROM sys.objects
-			WHERE object_id = OBJECT_ID(N'dbo.Pulse8_GetMemberByID'))
-			DROP PROCEDURE dbo.Pulse8_GetMemberByID
-Go
-
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE PROCEDURE dbo.Pulse8_GetMemberByID @MemberID int
-
-AS
-	BEGIN
-
 WITH RankedDx_CTE (MemberID, DiagnosisID, Row) AS (
 	SELECT MemberID
 	,DiagnosisID
@@ -35,7 +20,7 @@ DiagnosisCategories_CTE (DiagnosisID,DiagnosisCategoryID, CategoryDuplicateRank,
 	,MemberID
 	FROM [dbo].[MemberDiagnosis] mdx
 	JOIN RankedCat_CTE catSeverity on mdx.DiagnosisID = catSeverity.DiagnosisID )
-SELECT mem.MemberID AS 'MEMBER ID'
+SELECT mem.MemberID AS 'Member ID'
 	,mem.FirstName AS 'First Name'
 	,mem.LastName AS 'Last Name'
 	,dxmem.DiagnosisID AS 'Most Severe Diagnosis ID'
@@ -49,8 +34,3 @@ LEFT OUTER JOIN RankedDx_CTE dxmem on mem.MemberID = dxmem.MemberID AND dxmem.Ro
 LEFT OUTER JOIN dbo.Diagnosis dx on dx.DiagnosisID = dxmem.DiagnosisID
 LEFT OUTER JOIN DiagnosisCategories_CTE dxcat_ranked on mem.MemberID = dxcat_ranked.MemberID AND dxcat_ranked.CategoryDuplicateRank = 1
 LEFT OUTER JOIN dbo.DiagnosisCategory cat on dxcat_ranked.DiagnosisCategoryID = cat.DiagnosisCategoryID
-WHERE mem.MemberID = @MemberID
-
-END
-
-GO
