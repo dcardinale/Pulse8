@@ -1,4 +1,4 @@
-﻿using Pulse8.Models;
+﻿using pulse8Data;
 using System;
 
 namespace Pulse8
@@ -13,7 +13,7 @@ namespace Pulse8
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int memberID))
                 {
-                    var sql = new Data();
+                    var sql = new Pulse8Data.Data();
                     var info = sql.getMemberInfoById(memberID);
                     for (var i = 0; i < info.Count; i++)
                     {

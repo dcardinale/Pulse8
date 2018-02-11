@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Config = System.Configuration.ConfigurationManager;
+using Pulse8Models;
 
-namespace Pulse8.Models
+namespace Pulse8Data
 {
     public class Data
     {
-        private string ConnectionString { get; set; } = Config.AppSettings["Pulse8"];
+        private string ConnectionString { get; set; } = Config.AppSettings["pulse8"];
         public List<MemberInfo> getMemberInfoById(int id)
         {
             List<MemberInfo> memberInfo = new List<MemberInfo>();

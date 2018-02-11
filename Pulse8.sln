@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8", "Pulse8\Pulse8.csproj", "{0EFEFE94-176E-4167-B7A6-91841692C98A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8WebApi", "Pulse8WebApi\Pulse8WebApi.csproj", "{3A420FAA-6A66-45C3-BCF9-5D7D0CB1EC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Models", "PulseModels\Pulse8Models.csproj", "{6978AD3A-0EAF-4666-9680-0597CB79B07E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Data", "pulse8Data\Pulse8Data.csproj", "{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Business", "Pulse8Business\Pulse8Business.csproj", "{C8085EA6-CC01-41EC-BFDE-EB79C45373CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8IBusiness", "Pulse8IBusiness\Pulse8IBusiness.csproj", "{B68C7D24-813D-42B8-8EF2-618D58248EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{0EFEFE94-176E-4167-B7A6-91841692C98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EFEFE94-176E-4167-B7A6-91841692C98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EFEFE94-176E-4167-B7A6-91841692C98A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A420FAA-6A66-45C3-BCF9-5D7D0CB1EC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A420FAA-6A66-45C3-BCF9-5D7D0CB1EC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A420FAA-6A66-45C3-BCF9-5D7D0CB1EC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A420FAA-6A66-45C3-BCF9-5D7D0CB1EC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6978AD3A-0EAF-4666-9680-0597CB79B07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6978AD3A-0EAF-4666-9680-0597CB79B07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6978AD3A-0EAF-4666-9680-0597CB79B07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6978AD3A-0EAF-4666-9680-0597CB79B07E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8085EA6-CC01-41EC-BFDE-EB79C45373CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8085EA6-CC01-41EC-BFDE-EB79C45373CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8085EA6-CC01-41EC-BFDE-EB79C45373CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8085EA6-CC01-41EC-BFDE-EB79C45373CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
