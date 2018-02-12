@@ -1,7 +1,7 @@
 use Pulse8TestDB;
 
 IF EXISTS (SELECT * FROM sys.objects
-			WHERE object_id = OBJECT_ID(N'dbo.Pulse8_GetMemberByID'))
+			WHERE object_id = OBJECT_ID(N'dbo.Pulse8_Pulse8_GetAllMemberInfo'))
 			DROP PROCEDURE dbo.Pulse8_GetMemberByID
 Go
 
@@ -10,7 +10,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE dbo.Pulse8_GetMemberByID @MemberID int
+CREATE PROCEDURE dbo.Pulse8_Pulse8_GetAllMemberInfo
 
 AS
 	BEGIN

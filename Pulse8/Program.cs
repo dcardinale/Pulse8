@@ -1,34 +1,31 @@
-﻿using pulse8Data;
+﻿using Pulse8.Client;
 using System;
 
 namespace Pulse8
 {
     class Program
     {
+        private static ConsoleInteraction Interaction;
         static void Main(string[] args)
         {
-            while (true)
+            switch (args.Length>0? args[0]:"")
             {
-                Console.WriteLine($"Please enter a valid member ID{Environment.NewLine}Type \"Exit\" to exit application.");
-                var input = Console.ReadLine();
-                if (int.TryParse(input, out int memberID))
-                {
-                    var sql = new Pulse8Data.Data();
-                    var info = sql.getMemberInfoById(memberID);
-                    for (var i = 0; i < info.Count; i++)
-                    {
-                        if (i == 0)
-                            Console.WriteLine(info[i]);
-                        else
-                            Console.Write(info[i].GetCategoryInfo());
-                    }
-                    Console.WriteLine(Environment.NewLine + "Press any key to continue...");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                if (input.ToLower() == "exit")
+                case "-ef":
+                    Interaction = ConsoleInteraction.GetInstance(new Pulse8WebEF());
                     break;
+                case "-sql":
+                    Interaction = ConsoleInteraction.GetInstance(new Pulse8WebSQL());
+                    break;
+                default:
+                    ConsoleInteraction.InvalidInteraction();
+                    return;
+            }
+            while (Interaction.Continue)
+            {
+                Interaction.processInput();
             }
         }
+
+        
     }
 }

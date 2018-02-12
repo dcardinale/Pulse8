@@ -9,11 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8WebApi", "Pulse8WebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Models", "PulseModels\Pulse8Models.csproj", "{6978AD3A-0EAF-4666-9680-0597CB79B07E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Data", "pulse8Data\Pulse8Data.csproj", "{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Entities", "pulse8Data\Pulse8Entities.csproj", "{856CF6B8-E780-4A7E-8C7A-A52843BC8D0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8Business", "Pulse8Business\Pulse8Business.csproj", "{C8085EA6-CC01-41EC-BFDE-EB79C45373CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8IBusiness", "Pulse8IBusiness\Pulse8IBusiness.csproj", "{B68C7D24-813D-42B8-8EF2-618D58248EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pulse8SQL", "Pulse8SQL\Pulse8SQL.csproj", "{DA4D4F6B-F049-4685-A46E-0CDCE7DE7AC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68C7D24-813D-42B8-8EF2-618D58248EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4D4F6B-F049-4685-A46E-0CDCE7DE7AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4D4F6B-F049-4685-A46E-0CDCE7DE7AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4D4F6B-F049-4685-A46E-0CDCE7DE7AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4D4F6B-F049-4685-A46E-0CDCE7DE7AC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

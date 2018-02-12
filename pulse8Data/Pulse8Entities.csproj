@@ -50,67 +50,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADONet\Data.cs" />
     <Compile Include="Models\Diagnosi.cs">
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DiagnosisCategory.cs">
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DiagnosisCategoryMap.cs">
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Member.cs">
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MemberDiagnosi.cs">
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\pulse8Model.Context.cs">
+    <Compile Include="Models\Pulse8Entity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pulse8Model.Context.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\pulse8Model.cs">
+    <Compile Include="Models\Pulse8Entity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\pulse8Model.Designer.cs">
+    <Compile Include="Models\Pulse8Entity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pulse8Model.edmx</DependentUpon>
+      <DependentUpon>Pulse8Entity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Pulse8_GetMemberByID_Result.cs">
-      <DependentUpon>pulse8Model.tt</DependentUpon>
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pulse8_Pulse8_GetAllMemberInfo_Result.cs">
+      <DependentUpon>Pulse8Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Models\pulse8Model.edmx">
+    <EntityDeploy Include="Models\Pulse8Entity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>pulse8Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Pulse8Entity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\pulse8Model.edmx.diagram">
-      <DependentUpon>pulse8Model.edmx</DependentUpon>
+    <None Include="Models\Pulse8Entity.edmx.diagram">
+      <DependentUpon>Pulse8Entity.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\pulse8Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pulse8Model.edmx</DependentUpon>
-      <LastGenOutput>pulse8Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\pulse8Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pulse8Model.edmx</DependentUpon>
-      <LastGenOutput>pulse8Model.cs</LastGenOutput>
-    </Content>
-    <Content Include="SQL\pulse8AllMembersSproc.sql" />
-    <Content Include="SQL\pulse8Final.sql" />
-    <Content Include="SQL\Pulse8Sproc.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -120,6 +107,19 @@
       <Project>{6978ad3a-0eaf-4666-9680-0597cb79b07e}</Project>
       <Name>Pulse8Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Models\Pulse8Entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pulse8Entity.edmx</DependentUpon>
+      <LastGenOutput>Pulse8Entity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Pulse8Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pulse8Entity.edmx</DependentUpon>
+      <LastGenOutput>Pulse8Entity.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -177,6 +177,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\EntityController.cs" />
+    <Compile Include="Controllers\SQLController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -252,6 +254,28 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pulse8Business\Pulse8Business.csproj">
+      <Project>{c8085ea6-cc01-41ec-bfde-eb79c45373ca}</Project>
+      <Name>Pulse8Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pulse8Data\Pulse8Entities.csproj">
+      <Project>{856cf6b8-e780-4a7e-8c7a-a52843bc8d0c}</Project>
+      <Name>Pulse8Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pulse8IBusiness\Pulse8IBusiness.csproj">
+      <Project>{b68c7d24-813d-42b8-8ef2-618d58248ee3}</Project>
+      <Name>Pulse8IBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pulse8SQL\Pulse8SQL.csproj">
+      <Project>{da4d4f6b-f049-4685-a46e-0cdce7de7ac7}</Project>
+      <Name>Pulse8SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PulseModels\Pulse8Models.csproj">
+      <Project>{6978ad3a-0eaf-4666-9680-0597cb79b07e}</Project>
+      <Name>Pulse8Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

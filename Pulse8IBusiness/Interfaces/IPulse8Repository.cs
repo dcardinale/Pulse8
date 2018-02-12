@@ -7,7 +7,7 @@ namespace Pulse8IBusiness.Interfaces
 {
     public interface IPulse8Repository
     {
-        List<MemberInfo> GetAllMembers();
-        MemberInfo GetMemberById(int memberId);
+        List<MemberInfo> GetAllMemberInfo();
+        List<MemberInfo> GetMemberInfo(int memberId);
     }
 }

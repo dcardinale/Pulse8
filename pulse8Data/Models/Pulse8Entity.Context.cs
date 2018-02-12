@@ -14,11 +14,12 @@ namespace pulse8Data.Models
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
+    using System.Configuration;
     
-    public partial class Pulse8DBEntities : DbContext
+    public partial class Pulse8Entities : DbContext
     {
-        public Pulse8DBEntities()
-            : base("name=Pulse8DBEntities")
+        public Pulse8Entities()
+            : base(ConfigurationManager.ConnectionStrings["Pulse8Entities"].ConnectionString)
         {
         }
     
@@ -40,6 +41,11 @@ namespace pulse8Data.Models
                 new ObjectParameter("MemberID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pulse8_GetMemberByID_Result>("Pulse8_GetMemberByID", memberIDParameter);
+        }
+    
+        public virtual ObjectResult<Pulse8_Pulse8_GetAllMemberInfo_Result> Pulse8_Pulse8_GetAllMemberInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pulse8_Pulse8_GetAllMemberInfo_Result>("Pulse8_Pulse8_GetAllMemberInfo");
         }
     }
 }

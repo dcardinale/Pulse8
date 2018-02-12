@@ -44,9 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\pulse8Data\Pulse8Data.csproj">
+    <ProjectReference Include="..\pulse8Data\Pulse8Entities.csproj">
       <Project>{856cf6b8-e780-4a7e-8c7a-a52843bc8d0c}</Project>
-      <Name>Pulse8Data</Name>
+      <Name>Pulse8Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\PulseModels\Pulse8Models.csproj">
       <Project>{6978ad3a-0eaf-4666-9680-0597cb79b07e}</Project>

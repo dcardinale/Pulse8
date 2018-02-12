@@ -51,6 +51,7 @@ warning 6002: The table/view 'Pulse8TestDB.dbo.MemberDiagnosis' does not have a 
         <Function Name="Pulse8_GetMemberByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MemberID" Type="int" Mode="In" />
         </Function>
+        <Function Name="Pulse8_Pulse8_GetAllMemberInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Pulse8TestDBModelStoreContainer">
           <EntitySet Name="Diagnosis" EntityType="Self.Diagnosis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DiagnosisCategory" EntityType="Self.DiagnosisCategory" Schema="dbo" store:Type="Tables" />
@@ -112,7 +113,7 @@ warning 6002: The table/view 'Pulse8TestDB.dbo.MemberDiagnosis' does not have a 
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="DiagnosisID" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Pulse8DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Pulse8Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Diagnosis" EntityType="Self.Diagnosi" />
           <EntitySet Name="DiagnosisCategories" EntityType="Self.DiagnosisCategory" />
           <EntitySet Name="Members" EntityType="Self.Member" />
@@ -121,8 +122,20 @@ warning 6002: The table/view 'Pulse8TestDB.dbo.MemberDiagnosis' does not have a 
           <FunctionImport Name="Pulse8_GetMemberByID" ReturnType="Collection(Pulse8TestDBModel.Pulse8_GetMemberByID_Result)">
             <Parameter Name="MemberID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="Pulse8_Pulse8_GetAllMemberInfo" ReturnType="Collection(Pulse8TestDBModel.Pulse8_Pulse8_GetAllMemberInfo_Result)" />
         </EntityContainer>
         <ComplexType Name="Pulse8_GetMemberByID_Result">
+          <Property Type="Int32" Name="MEMBER_ID" Nullable="false" />
+          <Property Type="String" Name="First_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Most_Severe_Diagnosis_ID" Nullable="true" />
+          <Property Type="String" Name="Most_Severe_Diagnosis_Description" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Category_ID" Nullable="true" />
+          <Property Type="String" Name="Category_Description" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Category_Score" Nullable="true" />
+          <Property Type="Int32" Name="Is_Most_Severe_Category" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Pulse8_Pulse8_GetAllMemberInfo_Result">
           <Property Type="Int32" Name="MEMBER_ID" Nullable="false" />
           <Property Type="String" Name="First_Name" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="50" />
@@ -138,7 +151,7 @@ warning 6002: The table/view 'Pulse8TestDB.dbo.MemberDiagnosis' does not have a 
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Pulse8TestDBModelStoreContainer" CdmEntityContainer="Pulse8DBEntities">
+        <EntityContainerMapping StorageEntityContainer="Pulse8TestDBModelStoreContainer" CdmEntityContainer="Pulse8Entities">
           <EntitySetMapping Name="Diagnosis">
             <EntityTypeMapping TypeName="Pulse8TestDBModel.Diagnosi">
               <MappingFragment StoreEntitySet="Diagnosis">
@@ -184,6 +197,21 @@ warning 6002: The table/view 'Pulse8TestDB.dbo.MemberDiagnosis' does not have a 
           <FunctionImportMapping FunctionImportName="Pulse8_GetMemberByID" FunctionName="Pulse8TestDBModel.Store.Pulse8_GetMemberByID">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Pulse8TestDBModel.Pulse8_GetMemberByID_Result">
+                <ScalarProperty Name="MEMBER_ID" ColumnName="MEMBER ID" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="Most_Severe_Diagnosis_ID" ColumnName="Most Severe Diagnosis ID" />
+                <ScalarProperty Name="Most_Severe_Diagnosis_Description" ColumnName="Most Severe Diagnosis Description" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category ID" />
+                <ScalarProperty Name="Category_Description" ColumnName="Category Description" />
+                <ScalarProperty Name="Category_Score" ColumnName="Category Score" />
+                <ScalarProperty Name="Is_Most_Severe_Category" ColumnName="Is Most Severe Category" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pulse8_Pulse8_GetAllMemberInfo" FunctionName="Pulse8TestDBModel.Store.Pulse8_Pulse8_GetAllMemberInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Pulse8TestDBModel.Pulse8_Pulse8_GetAllMemberInfo_Result">
                 <ScalarProperty Name="MEMBER_ID" ColumnName="MEMBER ID" />
                 <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
