@@ -8,7 +8,21 @@ namespace Pulse8
         private static ConsoleInteraction Interaction;
         static void Main(string[] args)
         {
-            switch (args.Length>0? args[0]:"")
+            SetState(args);
+            RunMain();
+        }
+
+        private static void RunMain()
+        {
+            while (Interaction.Continue)
+            {
+                Interaction.processInput();
+            }
+        }
+
+        private static void SetState(string[] args)
+        {
+            switch (args.Length > 0 ? args[0] : "")
             {
                 case "-ef":
                     Interaction = ConsoleInteraction.GetInstance(new Pulse8WebEF());
@@ -17,15 +31,10 @@ namespace Pulse8
                     Interaction = ConsoleInteraction.GetInstance(new Pulse8WebSQL());
                     break;
                 default:
-                    ConsoleInteraction.InvalidInteraction();
-                    return;
-            }
-            while (Interaction.Continue)
-            {
-                Interaction.processInput();
+                    Interaction = ConsoleInteraction.InvalidInteraction();
+                    break;
             }
         }
 
-        
     }
 }

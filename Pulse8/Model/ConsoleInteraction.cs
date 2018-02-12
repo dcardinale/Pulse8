@@ -18,6 +18,7 @@ namespace Pulse8
                                     $"Type \"All\" to see all members";
 
         ConsoleInteraction(IPulse8WebClient client) => Client = client;
+        ConsoleInteraction() => Continue = false;
         public static ConsoleInteraction GetInstance(IPulse8WebClient client)
         {
             if (interaction == null)
@@ -53,10 +54,11 @@ namespace Pulse8
             Console.ReadKey();
             Console.Clear();
         }
-        public static void InvalidInteraction()
+        public static ConsoleInteraction InvalidInteraction()
         {
             Console.WriteLine("The value entered was not a valid switch. Please close application and start again.");
             Console.ReadKey();
+            return new ConsoleInteraction();
         }
 
     }
