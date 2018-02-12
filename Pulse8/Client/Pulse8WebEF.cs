@@ -29,7 +29,6 @@ namespace Pulse8.Client
         {
             using (var client = new HttpClient { BaseAddress = new Uri(connectionType) })
             {
-                //string json = JsonConvert.SerializeObject(id);
                 var json = new ObjectContent<int>(id, new JsonMediaTypeFormatter());
                 var response = client.PostAsync("getMember", json).Result;
                 if (response.IsSuccessStatusCode)
